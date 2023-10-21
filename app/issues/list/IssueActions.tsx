@@ -1,12 +1,13 @@
 import { Button, Flex } from '@radix-ui/themes';
 import Link from 'next/link';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import IssueStatusFilter from './IssueStatusFilter';
 
-const IssueActions = () => {
+const IssueActions = ({ children }: PropsWithChildren) => {
   return (
-    <Flex mb={'5'} justify={'between'}>
+    <Flex justify={'between'}>
       <IssueStatusFilter></IssueStatusFilter>
+      {children}
       <Button>
         <Link href='/issues/new'>New Issue</Link>
       </Button>
